@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruna Silva | Personal Trainer Especialista em Idosos</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#E31B23',
+                            redHover: '#B91C1C',
+                            pink: '#FFF5F5',
+                            skin: '#FCE4EC',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .reveal-delay-1 { animation-delay: 0.2s; }
+        .reveal-delay-2 { animation-delay: 0.4s; }
+        .reveal-delay-3 { animation-delay: 0.6s; }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gallery-img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #E31B23;
+            background: #FFEBEE;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body class="bg-[#FFF5F5] text-[#333] font-sans">
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5551981260984" target="_blank" class="whatsapp-float bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                    <div class="h-10 w-10">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUklVLmz8UXL1fStn18Crs4NEbsD6a875ZYyDMUepe8YySerys=w72-h72-p-rp-mo-br100" alt="Logo Bruna Silva" class="h-10 w-10 rounded-full border-2 border-brand-red" referrerPolicy="no-referrer">
+                    </div>
+                    <span class="font-serif text-2xl font-bold tracking-tight text-gray-900 border-l-2 border-brand-red pl-3 italic">Bruna Silva</span>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#sobre" class="text-gray-600 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">Sobre</a>
+                    <a href="#servicos" class="text-gray-600 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">Serviços</a>
+                    <a href="#comodidades" class="text-gray-600 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">Comodidades</a>
+                    <a href="#depoimentos" class="text-gray-600 hover:text-brand-red transition-colors text-sm font-medium uppercase tracking-wider">Depoimentos</a>
+                    <a href="https://wa.me/5551981260984" target="_blank" class="bg-brand-red text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-redHover transition-all shadow-md active:scale-95">
+                        Agendar Treino
+                    </a>
+                </div>
+                <!-- Mobile Menu Button (Simplified) -->
+                <div class="md:hidden">
+                    <a href="https://wa.me/5551981260984" target="_blank" class="text-brand-red p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.05 2a9 9 0 0 1 8 8"/><path d="M14.05 5.64a5 5 0 0 1 3.92 3.92"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden bg-brand-pink pt-16 pb-24 md:pt-24 md:pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-red/10 text-brand-red rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-red animate-pulse"></span>
+                        Especialista em Terceira Idade
+                    </div>
+                    <h1 class="font-serif text-5xl md:text-7xl leading-tight text-gray-900 mb-6 italic">
+                        Te entrego um <span class="text-brand-red">envelhecimento ativo</span>.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">
+                        Sou Bruna Silva, personal trainer dedicada a transformar a vida de idosos através de treinos personalizados que trazem mais equilíbrio, mobilidade e saúde para o seu dia a dia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5551981260984" target="_blank" class="bg-brand-red text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-redHover transition-all shadow-xl hover:-translate-y-1 text-center">
+                            Começar agora
+                        </a>
+                        <a href="#sobre" class="flex items-center justify-center gap-2 px-10 py-4 font-semibold text-gray-700 hover:text-brand-red transition-all">
+                            Saiba mais 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down-right"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
+                        </a>
+                    </div>
+                    <div class="mt-12 flex items-center gap-4">
+                        <div class="flex -space-x-2">
+                            <div class="h-10 w-10 rounded-full border-2 border-white bg-gray-200"><img src="https://lh3.googleusercontent.com/a/ACg8ocLIYQ4zZLRVSEX-0USVjtRt9vrk2TMv2GH5KLBU_JBNSKBHT7Lc=w32-h32-p-rp-mo-br100" class="rounded-full" referrerPolicy="no-referrer"></div>
+                            <div class="h-10 w-10 rounded-full border-2 border-white bg-gray-300"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVfrhv4OjzXquykesnSEGbYZmvcEEciqz-DGbkCCd_2sLdcOBb1=w32-h32-p-rp-mo-br100" class="rounded-full" referrerPolicy="no-referrer"></div>
+                            <div class="h-10 w-10 rounded-full border-2 border-white bg-gray-400"><img src="https://lh3.googleusercontent.com/a-/ALV-UjXjSO73BDCO3R8KbCjs3XWbEnSmnvDYmrEfNlOEPn-LOZRfxuHh=w32-h32-p-rp-mo-br100" class="rounded-full" referrerPolicy="no-referrer"></div>
+                        </div>
+                        <div class="text-sm">
+                            <div class="stat-badge mb-1 inline-block">⭐ 5.0 (98 avaliações)</div>
+                            <p class="text-gray-500 font-medium">Alunos felizes em Passo Fundo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal reveal-delay-2 flex justify-center">
+                    <div class="absolute -z-10 w-64 h-64 bg-brand-skin rounded-full blur-3xl opacity-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="relative">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHDxqMYy_otZOASW29R5adJdKp6zvkPfbeM85xN5gv04UtaavAt-3R20dyEDslVJBsPw5066FlIho-v9ZrRnDTXc6_bTDLNz_Omk1A3Vj_tCEqN-LJNQ2gY4zgOm52sPPa2iWKf" alt="Bruna Silva em atendimento" class="rounded-[2rem] shadow-soft w-full max-w-md object-cover aspect-[4/5] border-8 border-white" referrerPolicy="no-referrer">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-soft border border-gray-100 hidden sm:block">
+                            <p class="stat-badge text-lg">⭐ 5.0</p>
+                            <p class="text-gray-500 text-xs font-semibold uppercase tracking-widest mt-1">Avaliação Google</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Abstract Shapes -->
+        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-brand-skin/30 rounded-full blur-3xl"></div>
+    </header>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-brand-red font-bold uppercase tracking-widest text-sm mb-4">Conheça sua Personal</h2>
+                    <h3 class="font-serif text-4xl md:text-5xl text-gray-900 mb-8 leading-tight">
+                        Bruna Silva: Paixão e dedicação pelo <span class="italic text-gray-400">cuidado</span> com a melhor idade.
+                    </h3>
+                    <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                        <p>
+                            Especialista em treinamento para idosos, meu foco é devolver a autonomia e a alegria de se movimentar. Acredito que o exercício físico é o melhor remédio para a longevidade com qualidade.
+                        </p>
+                        <p>
+                            Com um olhar atento e humano, acompanho cada aluno em seu próprio ritmo, respeitando limites e celebrando cada conquista, por menor que seja. O ambiente é seguro, acolhedor e focado 100% em você.
+                        </p>
+                    </div>
+                    <div class="mt-10 pt-10 border-t border-gray-100 grid grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-3xl font-bold text-gray-900">+4.100</p>
+                            <p class="text-gray-500 text-sm">Seguidores no Instagram</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-gray-900">100%</p>
+                            <p class="text-gray-500 text-sm">Foco em Idosos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+                   <div class="rounded-3xl bg-brand-pink p-8 flex flex-col justify-center items-center text-center">
+                        <div class="bg-white p-4 rounded-full mb-4 shadow-sm text-brand-red">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                        </div>
+                        <h4 class="font-bold text-gray-900 italic">Ambiente Seguro</h4>
+                   </div>
+                   <div class="rounded-3xl bg-brand-skin p-8 mt-12 flex flex-col justify-center items-center text-center">
+                        <div class="bg-white p-4 rounded-full mb-4 shadow-sm text-brand-red">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-pulse"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+                        </div>
+                        <h4 class="font-bold text-gray-900 italic">Qualidade de Vida</h4>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicos Section -->
+    <section id="servicos" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-red font-bold uppercase tracking-widest text-sm mb-4">O que oferecemos</h2>
+                <h3 class="font-serif text-4xl md:text-5xl text-gray-900 mb-6">Tratamento Personalizado e <span class="italic">Humanizado</span></h3>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Especialidades focadas no bem-estar físico e mental, proporcionando um envelhecimento com dignidade e vigor.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Personal -->
+                <div class="bg-white p-10 rounded-[24px] shadow-soft hover:-translate-y-1 transition-all border border-red-50 group">
+                    <div class="bg-brand-pink text-brand-red w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/></svg>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-4 text-gray-900">Personal Trainer para Idosos</h4>
+                    <p class="text-gray-600 leading-relaxed">Foco exclusivo nas necessidades e objetivos da maturidade, com atenção integral.</p>
+                </div>
+                <!-- Funcional -->
+                <div class="bg-white p-10 rounded-[24px] shadow-soft hover:-translate-y-1 transition-all border border-red-50 group">
+                    <div class="bg-brand-pink text-brand-red w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-4 text-gray-900">Treinamento Funcional</h4>
+                    <p class="text-gray-600 leading-relaxed">Exercícios que preparam seu corpo para as atividades reais do dia a dia com segurança.</p>
+                </div>
+                <!-- Fortalecimento -->
+                <div class="bg-white p-10 rounded-[24px] shadow-soft hover:-translate-y-1 transition-all border border-red-50 group">
+                    <div class="bg-brand-pink text-brand-red w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dumbbell"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-4 text-gray-900">Fortalecimento Muscular</h4>
+                    <p class="text-gray-600 leading-relaxed">Aumente sua força e densidade óssea para prevenir problemas de saúde futuros.</p>
+                </div>
+                <!-- Equilíbrio -->
+                <div class="bg-white p-10 rounded-[24px] shadow-soft hover:-translate-y-1 transition-all border border-red-50 group">
+                    <div class="bg-brand-pink text-brand-red w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scale"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-4 text-gray-900">Equilíbrio e Mobilidade</h4>
+                    <p class="text-gray-600 leading-relaxed">Melhore sua postura e evite tonturas, garantindo passos firmes e confiantes.</p>
+                </div>
+                <!-- Quedas -->
+                <div class="bg-white p-10 rounded-[24px] shadow-soft hover:-translate-y-1 transition-all border border-red-50 group">
+                    <div class="bg-brand-pink text-brand-red w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-4 text-gray-900">Prevenção de Quedas</h4>
+                    <p class="text-gray-600 leading-relaxed">Estratégias e treinos específicos para reduzir drasticamente o risco de acidentes.</p>
+                </div>
+                <!-- Qualidade -->
+                <div class="bg-white p-10 rounded-[24px] shadow-soft hover:-translate-y-1 transition-all border border-red-50 group">
+                    <div class="bg-brand-pink text-brand-red w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smile"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-4 text-gray-900">Qualidade de Vida</h4>
+                    <p class="text-gray-600 leading-relaxed">Bem-estar integral que reflete no sono, no humor e na disposição diária.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios Section -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipM7fxkwX54KGDrTV9Nl9Md0dL3rGZ77n3VfW4oB=s1000" alt="Bruna Silva - Atendimento Profissional" class="rounded-3xl shadow-lg mt-12 gallery-img h-full object-cover" referrerPolicy="no-referrer">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHDxqMYy_otZOASW29R5adJdKp6zvkPfbeM85xN5gv04UtaavAt-3R20dyEDslVJBsPw5066FlIho-v9ZrRnDTXc6_bTDLNz_Omk1A3Vj_tCEqN-LJNQ2gY4zgOm52sPPa2iWKf" alt="Treino Especializado" class="rounded-3xl shadow-lg gallery-img h-full object-cover" referrerPolicy="no-referrer">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-red/10 rounded-full -z-10 animate-bounce" style="animation-duration: 5s"></div>
+                </div>
+                <div>
+                     <h2 class="text-brand-red font-bold uppercase tracking-widest text-sm mb-4">Por que escolher a Bruna?</h2>
+                    <h3 class="font-serif text-4xl md:text-5xl text-gray-900 mb-8">Diferenciais que fazem a <span class="italic">diferença</span></h3>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-pink border border-brand-red flex items-center justify-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Atendimento Especializado</h4>
+                                <p class="text-gray-600">Não sou uma personal genérica; minha carreira é focada 100% em entender o idoso.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-pink border border-brand-red flex items-center justify-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Acompanhamento Individual</h4>
+                                <p class="text-gray-600">Cada movimento é corrigido e adaptado na hora. Zero chances de lesão.</p>
+                            </div>
+                        </li>
+                         <li class="flex gap-4">
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-pink border border-brand-red flex items-center justify-center mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Horário Marcado e Comodidade</h4>
+                                <p class="text-gray-600">Sua hora é sagrada. Ambiente privativo com banheiro e estrutura completa.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div id="comodidades" class="mt-12 bg-brand-pink rounded-3xl p-8 border border-brand-skin">
+                        <div class="flex items-center gap-4 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-store text-brand-red"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 10V7"/></svg>
+                            <h5 class="font-bold text-gray-900">Pagamento facilitado:</h5>
+                        </div>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-700">
+                            <span class="bg-white px-4 py-2 rounded-full shadow-sm">Cartão de Crédito</span>
+                            <span class="bg-white px-4 py-2 rounded-full shadow-sm">Cartão de Débito</span>
+                            <span class="bg-white px-4 py-2 rounded-full shadow-sm">NFC / Pix</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-red font-bold uppercase tracking-widest text-sm mb-4">Galeria</h2>
+                <h3 class="font-serif text-4xl md:text-5xl text-gray-900">Transformando <span class="italic">Vidas</span></h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="aspect-square overflow-hidden rounded-[24px] shadow-soft border border-red-50">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMf1nzwg1axZZTBvitooEUm9dShOVyRrJL_Bn3d=s1000" alt="Atendimento na Melhor Idade" class="w-full h-full object-cover gallery-img" referrerPolicy="no-referrer">
+                </div>
+                <!-- Foto 2 -->
+                <div class="aspect-square overflow-hidden rounded-[24px] shadow-soft border border-red-50">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPNUMDSBHAjJWCLAYrhO3MhOC2BvoPNXKEOo5Ri=s1000" alt="Treinamento com Bruna Silva" class="w-full h-full object-cover gallery-img" referrerPolicy="no-referrer">
+                </div>
+                <!-- Foto 3 -->
+                <div class="aspect-square overflow-hidden rounded-[24px] shadow-soft border border-red-50">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHDxqMYy_otZOASW29R5adJdKp6zvkPfbeM85xN5gv04UtaavAt-3R20dyEDslVJBsPw5066FlIho-v9ZrRnDTXc6_bTDLNz_Omk1A3Vj_tCEqN-LJNQ2gY4zgOm52sPPa2iWKf" alt="Qualidade de Vida" class="w-full h-full object-cover gallery-img" referrerPolicy="no-referrer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testemunhos Section -->
+    <section id="depoimentos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-red font-bold uppercase tracking-widest text-sm mb-4">Experiência Real</h2>
+                <h3 class="font-serif text-4xl md:text-5xl text-gray-900">O que meus <span class="italic text-brand-red">queridos alunos</span> dizem</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Joana -->
+                <div class="bg-white p-8 rounded-[24px] shadow-soft border border-brand-skin relative">
+                    <div class="stat-badge mb-4 inline-block">★★★★★</div>
+                    <p class="text-gray-700 italic mb-8 leading-relaxed font-serif text-lg">
+                        "A Bruna é uma professora muito dedicada, sempre preocupada com o bem estar e o limite de cada aluno. Recomendo muito."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-brand-skin pt-6">
+                        <img src="https://lh3.googleusercontent.com/a/ACg8ocLIYQ4zZLRVSEX-0USVjtRt9vrk2TMv2GH5KLBU_JBNSKBHT7Lc=w32-h32-p-rp-mo-br100" alt="Joana Ghion" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" referrerPolicy="no-referrer">
+                        <div>
+                            <p class="font-bold text-gray-900">Joana Ghion</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Passo Fundo - RS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Amanda -->
+                <div class="bg-white p-8 rounded-[24px] shadow-soft border border-white/20 relative md:translate-y-8">
+                    <div class="stat-badge mb-4 inline-block">★★★★★</div>
+                    <p class="text-gray-700 italic mb-8 leading-relaxed font-serif text-lg">
+                        "A Bruna é uma personal incrível! Muito querida, dedicada e sempre atenta em tudo que faz. Durante os treinos, ela nos deixa super à vontade."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-white/40 pt-6">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjVfrhv4OjzXquykesnSEGbYZmvcEEciqz-DGbkCCd_2sLdcOBb1=w32-h32-p-rp-mo-br100" alt="Amanda Bortoletti" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" referrerPolicy="no-referrer">
+                        <div>
+                            <p class="font-bold text-gray-900">Amanda Fontoura</p>
+                             <p class="text-xs text-gray-500 uppercase tracking-wider">Passo Fundo - RS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Paula -->
+                <div class="bg-white p-8 rounded-[24px] shadow-soft border border-brand-skin relative">
+                    <div class="stat-badge mb-4 inline-block">★★★★★</div>
+                    <p class="text-gray-700 italic mb-8 leading-relaxed font-serif text-lg">
+                        "Profissional maravilhosa, muito atenciosa, pontual e responsável. Indico para todos os públicos!"
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-brand-skin pt-6">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjXjSO73BDCO3R8KbCjs3XWbEnSmnvDYmrEfNlOEPn-LOZRfxuHh=w32-h32-p-rp-mo-br100" alt="Paula Tisot" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" referrerPolicy="no-referrer">
+                        <div>
+                            <p class="font-bold text-gray-900">Paula Tisot</p>
+                             <p class="text-xs text-gray-500 uppercase tracking-wider">Passo Fundo - RS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Localização Section -->
+    <section id="localizacao" class="py-24 bg-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-brand-red font-bold uppercase tracking-widest text-sm mb-4">Onde encontrar</h2>
+                    <h3 class="font-serif text-4xl md:text-5xl mb-8 leading-tight text-gray-900">Um refúgio para o seu <span class="italic text-brand-red">bem-estar</span> no centro.</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="card bg-brand-pink shadow-soft flex gap-6 p-8 border border-red-50">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center flex-shrink-0 text-brand-red shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1 italic text-gray-900">Endereço</h4>
+                                <p class="text-gray-600">Av. Brasil Oeste, 1288 - Centro<br>Passo Fundo - RS, 99025-013</p>
+                            </div>
+                        </div>
+                        <div class="card bg-brand-skin shadow-soft flex gap-6 p-8 border border-white">
+                            <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center flex-shrink-0 text-brand-red shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock-3"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16.5 12"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1 italic text-gray-900">Horários</h4>
+                                <p class="text-gray-600">Segunda a Sexta<br>06:30 às 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-96 w-full rounded-[2rem] overflow-hidden shadow-soft border-8 border-white bg-gray-100 flex items-center justify-center">
+                    <!-- Fake Map Representation -->
+                     <div class="bg-brand-pink w-full h-full flex flex-col items-center justify-center p-8 text-center">
+                        <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand-red mb-4 shadow-sm">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-navigation-2"><polygon points="12 2 19 21 12 17 5 21 12 2"/></svg>
+                        </div>
+                        <p class="mb-4 text-gray-500 uppercase tracking-widest text-xs font-bold">Mapa Interativo</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Brasil+Oeste,+1288+-+Centro+-+Passo+Fundo+-+RS" target="_blank" class="bg-brand-red text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-brand-redHover transition-all shadow-md">
+                            Abrir no Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-24 bg-brand-pink flex justify-center items-center">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-5xl md:text-6xl italic mb-8 text-gray-900">Dê o primeiro passo para uma vida mais equilibrada.</h2>
+            <p class="text-xl text-gray-600 mb-12">Agende hoje mesmo sua primeira sessão e sinta a diferença que um treino especializado pode fazer.</p>
+            <a href="https://wa.me/5551981260984" target="_blank" class="bg-brand-red text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-brand-redHover transition-all shadow-xl inline-flex items-center gap-3 active:scale-95">
+                Chamar no WhatsApp
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-20 pb-10 border-t border-red-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-center md:text-left">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 justify-center md:justify-start mb-6">
+                        <img src="https://lh3.googleusercontent.com/a-/ALV-UjUklVLmz8UXL1fStn18Crs4NEbsD6a875ZYyDMUepe8YySerys=w72-h72-p-rp-mo-br100" class="h-10 w-10 rounded-full border border-brand-red" referrerPolicy="no-referrer">
+                        <span class="font-serif text-2xl font-bold italic tracking-tight text-gray-900 border-l-2 border-brand-red pl-3">Bruna Silva</span>
+                    </div>
+                    <p class="text-gray-500 max-w-sm mb-6 leading-relaxed">Pós-graduada em fisiologia do exercício e especialista em longevidade. Transformando o envelhecimento em uma fase de vitalidade.</p>
+
+                    <div class="flex gap-4 justify-center md:justify-start">
+                        <a href="https://www.instagram.com/personalbruna.silva/" target="_blank" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-brand-red hover:text-white transition-all transform hover:-translate-y-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://wa.me/5551981260984" target="_blank" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-green-500 hover:text-white transition-all transform hover:-translate-y-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 text-gray-900 uppercase tracking-widest text-xs">Navegação</h5>
+                    <ul class="space-y-4 text-gray-500">
+                        <li><a href="#sobre" class="hover:text-brand-red transition-colors">Sobre mim</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-red transition-colors">Serviços</a></li>
+                        <li><a href="#depoimentos" class="hover:text-brand-red transition-colors">Avaliações</a></li>
+                        <li><a href="https://wa.me/5551981260984" class="hover:text-brand-red transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-6 text-gray-900 uppercase tracking-widest text-xs">A Empresa</h5>
+                    <ul class="space-y-4 text-gray-500">
+                        <li>Bruna Silva Personal</li>
+                        <li>Passo Fundo - RS</li>
+                        <li>CNPJ: 00.000.000/0001-00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-10 border-t border-gray-100 text-center flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-sm text-gray-400">© 2024 Bruna Silva Personal Trainer. Todos os direitos reservados.</p>
+                <p class="text-sm text-gray-400 italic">Feito com carinho para o envelhecimento ativo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    entry.target.style.opacity = "1";
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, .reveal').forEach(el => {
+            // Ensure child elements can have their own animations
+            observer.observe(el);
+        });
+        
+        // Ensure initial elements are visible if they are already in viewport
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if(rect.top < window.innerHeight) {
+                   el.classList.add('reveal');
+                   el.style.opacity = "1";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
